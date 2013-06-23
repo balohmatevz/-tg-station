@@ -36,12 +36,27 @@
 
 	return 1
 
+
+/obj/effect/invisible/opaque
+	opacity = 1
+
 /obj/machinery/door/window/New()
 	..()
 
 	if (src.req_access && src.req_access.len)
 		src.icon_state = "[src.icon_state]"
 		src.base_state = src.icon_state
+
+	switch(dir)
+		if(1)
+			pixel_y = 3
+		if(2)
+			pixel_y = -3
+		if(4)
+			pixel_x = 3
+		if(8)
+			pixel_x = -3
+
 	return
 
 /obj/machinery/door/window/Del()

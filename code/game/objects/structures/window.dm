@@ -264,6 +264,18 @@
 	update_nearby_tiles(need_rebuild=1)
 	update_nearby_icons()
 
+	spawn(5)
+		if(!locate(/obj/structure/grille) in loc)
+			switch(dir)
+				if(1)
+					pixel_y = 3
+				if(2)
+					pixel_y = -3
+				if(4)
+					pixel_x = 3
+				if(8)
+					pixel_x = -3
+
 	return
 
 
